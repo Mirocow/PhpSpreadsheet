@@ -32,7 +32,9 @@ class CachedObjectStorageFactory
     const CACHE_IGBINARY = 'Igbinary';
     const CACHE_TO_DISCISAM = 'DiscISAM';
     const CACHE_TO_APC = 'APC';
+    const CACHE_TO_APCU = 'APCU';
     const CACHE_TO_MEMCACHE = 'Memcache';
+    const CACHE_TO_MEMCACHED = 'Memcached';
     const CACHE_TO_PHPTEMP = 'PHPTemp';
     const CACHE_TO_WINCACHE = 'Wincache';
     const CACHE_TO_SQLITE = 'SQLite';
@@ -65,7 +67,9 @@ class CachedObjectStorageFactory
         self::CACHE_TO_PHPTEMP,
         self::CACHE_TO_DISCISAM,
         self::CACHE_TO_APC,
+        self::CACHE_TO_APCU,
         self::CACHE_TO_MEMCACHE,
+        self::CACHE_TO_MEMCACHED,
         self::CACHE_TO_WINCACHE,
         self::CACHE_TO_SQLITE,
         self::CACHE_TO_SQLITE3,
@@ -90,7 +94,15 @@ class CachedObjectStorageFactory
         self::CACHE_TO_APC => [
             'cacheTime' => 600,
         ],
+        self::CACHE_TO_APCU => [
+            'cacheTime' => 600,
+        ],
         self::CACHE_TO_MEMCACHE => [
+            'memcacheServer' => 'localhost',
+            'memcachePort' => 11211,
+            'cacheTime' => 600,
+        ],
+        self::CACHE_TO_MEMCACHED => [
             'memcacheServer' => 'localhost',
             'memcachePort' => 11211,
             'cacheTime' => 600,
